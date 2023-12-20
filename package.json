@@ -1,0 +1,23 @@
+{
+  "name": "online_edulk",
+  "version": "1.0.0",
+  "description": "Online Education Accessible for everyone",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krizh4/online_edulk.git"
+  },
+  "author": "krizh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krizh4/online_edulk/issues"
+  },
+  "homepage": "https://github.com/krizh4/online_edulk#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
