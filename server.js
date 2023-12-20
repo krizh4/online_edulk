@@ -11,6 +11,11 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'views/home.html'))
 })
 
+app.get('/course/:courseId', (req, res) => {
+  const coursePath = req.params.courseId;
+  res.sendFile(path.join(__dirname, coursePath))
+})
+
 app.get('/api/videos/:videoId', (req, res) => {
   const videoId = req.params.videoId;
   // You might want to implement logic to determine the video file based on the videoId
