@@ -13,14 +13,14 @@ app.get('/', (req, res) => {
 
 app.get('/course/:courseId', (req, res) => {
   const coursePath = req.params.courseId;
-  res.sendFile(path.join(__dirname, coursePath))
+  res.sendFile(`${__dirname}/views/${coursePath}.html`)
 })
 
 app.get('/api/videos/:videoId', (req, res) => {
   const videoId = req.params.videoId;
   // You might want to implement logic to determine the video file based on the videoId
   const videoPath = `videos/${videoId}.mkv`; // Assuming your videos are in mp4 format
-  res.sendFile(path.join(__dirname, videoPath));
+  res.sendFile(path.join(__dirname, videoPath,));
 });
 
 // Start the server

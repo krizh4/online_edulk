@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Management System</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #8e44ad; /* Purple */
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .left-column {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .right-column {
+      width: 60%; /* Adjust the width as needed */
+      padding: 20px;
+      margin-left: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .featured-course {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .course-list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .course {
+      background-color: #fff;
+      padding: 15px;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .month-section {
+      margin-bottom: 20px;
+    }
+
+    .month-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .lesson-list {
+      list-style: none;
+      padding: 0;
+      display: none;
+    }
+
+    .lesson {
+      margin: 10px 0;
+    }
+
+    .video-player {
+      width: 100%;
+    }
+
+    .live-lesson-button {
+      background-color: #e91e63; /* Pink */
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #e91e63; /* Pink */
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Learning Management System</h1>
+    <p>Empowering Education</p>
+  </header>
+
+  <div class="container">
+    <div class="left-column">
+      <section class="course-page">
+        <h2>Course Title</h2>
+        <p>Description of the course goes here.</p>
+
+        <div class="month-section" onclick="toggleLessons('january-lessons')">
+          <h3 class="month-title">January</h3>
+          <ul class="lesson-list" id="january-lessons">
+            <li class="lesson"><a href="#" onclick="playVideo('https:\/\/youtu.be/embed/rxJtOm68TMk')">Lesson 1: Introduction to the Course</a></li>
+            <li class="lesson"><a href="#" onclick="playVideo('https:\/\/www.youtube.com/embed/eI4an8aSsgw')">Lesson 2: Basics of the Topic</a></li>
+            <!-- Add more lessons for January as needed -->
+          </ul>
+        </div>
+
+        <div class="month-section" onclick="toggleLessons('february-lessons')">
+          <h3 class="month-title">February</h3>
+          <ul class="lesson-list" id="february-lessons">
+            <li class="lesson"><a href="#" onclick="playVideo('lesson3-video-url')">Lesson 3: Advanced Concepts</a></li>
+            <!-- Add more lessons for February as needed -->
+          </ul>
+        </div>
+
+        <!-- Add more month sections as needed -->
+
+        <a href="#" class="live-lesson-button" onclick="playLiveLesson('live-lesson-1')">Join Live Lesson 1</a>
+        <a href="#" class="live-lesson-button" onclick="playLiveLesson('live-lesson-2')">Join Live Lesson 2</a>
+        <!-- Add more live lesson buttons as needed -->
+      </section>
+    </div>
+
+    <div class="right-column">
+      <div class="video-player" id="video-player"></div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2023 Learning Management System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleLessons(lessonId) {
+      var lessonList = document.getElementById(lessonId);
+      lessonList.style.display = (lessonList.style.display === 'none' || lessonList.style.display === '') ? 'block' : 'none';
+    }
+
+    function playVideo(videoUrl) {
+      var videoPlayer = document.getElementById('video-player');
+    //   videoPlayer.innerHTML = '<iframe width="100%" height="400" src="' + videoUrl + '" frameborder="0" allowfullscreen></iframe>';
+      videoPlayer.innerHTML = '<iframe width="560" height="315" src="' + videoUrl + '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    }
+
+    function playLiveLesson(lessonId) {
+      // Implement live lesson functionality
+      alert('Redirecting to live lesson: ' + lessonId);
+    }
+  </script>
+
+</body>
+</html>
